@@ -35,8 +35,8 @@
   (type $t33 (func (param i32 i32 i32 i32) (result i32)))
   (type $t34 (func (param i32 i32 i32 i32 i32) (result i32)))
   (import "env" "callDataCopy" (func $env.callDataCopy (type $t3)))
-  (import "env" "eeiReturn" (func $env.eeiReturn (type $t5)))
   (import "env" "ethereum_callDataCopy" (func $env.ethereum_callDataCopy (type $t3)))
+  (import "env" "ethereum_return" (func $env.ethereum_return (type $t5)))
   (func $f3 (type $t5) (param $p0 i32) (param $p1 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i32) (local $l8 i32) (local $l9 i32) (local $l10 i32) (local $l11 i32) (local $l12 i32) (local $l13 i32) (local $l14 i64) (local $l15 i64) (local $l16 i64) (local $l17 i64) (local $l18 i64) (local $l19 i64) (local $l20 i64) (local $l21 i64) (local $l22 i64) (local $l23 i64) (local $l24 i64)
     (set_local $l13
@@ -2278,7 +2278,7 @@
                 (set_local $l43
                   (i64.load
                     (get_local $l8)))
-                (set_local $l45
+                (set_local $l44
                   (i64.load
                     (get_local $l9)))
                 (set_local $l41
@@ -2295,7 +2295,7 @@
                 (set_local $l46
                   (i64.load
                     (get_local $l1)))
-                (set_local $l44
+                (set_local $l45
                   (i64.load
                     (get_local $l3)))
                 (set_local $l52
@@ -2379,7 +2379,7 @@
                           (i64.or
                             (i64.or
                               (get_local $l41)
-                              (get_local $l45))
+                              (get_local $l44))
                             (get_local $l43))
                           (get_local $l42))))
                     (i64.store offset=808
@@ -2428,7 +2428,7 @@
                         (get_local $l12)))
                     (i64.store offset=808
                       (get_local $l12)
-                      (get_local $l45))
+                      (get_local $l44))
                     (i64.store offset=800
                       (get_local $l12)
                       (get_local $l41))
@@ -2440,7 +2440,7 @@
                       (get_local $l42))
                     (i64.store offset=840
                       (get_local $l12)
-                      (get_local $l45))
+                      (get_local $l44))
                     (i64.store offset=832
                       (get_local $l12)
                       (get_local $l41))
@@ -2612,7 +2612,7 @@
                         (get_local $l12)))
                     (i64.store offset=808
                       (get_local $l12)
-                      (get_local $l45))
+                      (get_local $l44))
                     (i64.store offset=800
                       (get_local $l12)
                       (get_local $l41))
@@ -2709,7 +2709,7 @@
                       (get_local $l46))
                     (i64.store offset=800
                       (get_local $l12)
-                      (get_local $l44))
+                      (get_local $l45))
                     (i64.store offset=816
                       (get_local $l12)
                       (get_local $l47))
@@ -3163,7 +3163,7 @@
                       (set_local $l43
                         (i64.load offset=800
                           (get_local $l12)))
-                      (set_local $l45
+                      (set_local $l44
                         (i64.load offset=808
                           (get_local $l12)))
                       (i64.store offset=808
@@ -3251,7 +3251,7 @@
                       (set_local $l46
                         (i64.load offset=800
                           (get_local $l12)))
-                      (set_local $l44
+                      (set_local $l45
                         (i64.load offset=808
                           (get_local $l12)))
                       (i64.store offset=808
@@ -3347,7 +3347,7 @@
                           (get_local $l12)))
                       (i64.store offset=840
                         (get_local $l12)
-                        (get_local $l45))
+                        (get_local $l44))
                       (i64.store offset=832
                         (get_local $l12)
                         (get_local $l43))
@@ -3383,7 +3383,7 @@
                           (get_local $l12)))
                       (i64.store offset=840
                         (get_local $l12)
-                        (get_local $l44))
+                        (get_local $l45))
                       (i64.store offset=832
                         (get_local $l12)
                         (get_local $l46))
@@ -3458,7 +3458,7 @@
                           (get_local $l12)))
                       (i64.store offset=808
                         (get_local $l12)
-                        (get_local $l45))
+                        (get_local $l44))
                       (i64.store offset=800
                         (get_local $l12)
                         (get_local $l43))
@@ -3470,7 +3470,7 @@
                         (get_local $l41))
                       (i64.store offset=840
                         (get_local $l12)
-                        (get_local $l45))
+                        (get_local $l44))
                       (i64.store offset=832
                         (get_local $l12)
                         (get_local $l43))
@@ -3505,7 +3505,7 @@
                           (get_local $l12)))
                       (i64.store offset=840
                         (get_local $l12)
-                        (get_local $l45))
+                        (get_local $l44))
                       (i64.store offset=832
                         (get_local $l12)
                         (get_local $l43))
@@ -3531,12 +3531,12 @@
                       (set_local $l43
                         (i64.load offset=768
                           (get_local $l12)))
-                      (set_local $l45
+                      (set_local $l44
                         (i64.load offset=776
                           (get_local $l12)))
                       (i64.store offset=808
                         (get_local $l12)
-                        (get_local $l45))
+                        (get_local $l44))
                       (i64.store offset=800
                         (get_local $l12)
                         (get_local $l43))
@@ -3548,7 +3548,7 @@
                         (get_local $l41))
                       (i64.store offset=840
                         (get_local $l12)
-                        (get_local $l45))
+                        (get_local $l44))
                       (i64.store offset=832
                         (get_local $l12)
                         (get_local $l43))
@@ -3657,7 +3657,7 @@
                           (get_local $l12)))
                       (i64.store offset=808
                         (get_local $l12)
-                        (get_local $l44))
+                        (get_local $l45))
                       (i64.store offset=800
                         (get_local $l12)
                         (get_local $l46))
@@ -3669,7 +3669,7 @@
                         (get_local $l48))
                       (i64.store offset=840
                         (get_local $l12)
-                        (get_local $l44))
+                        (get_local $l45))
                       (i64.store offset=832
                         (get_local $l12)
                         (get_local $l46))
@@ -3695,12 +3695,12 @@
                       (set_local $l46
                         (i64.load offset=800
                           (get_local $l12)))
-                      (set_local $l44
+                      (set_local $l45
                         (i64.load offset=808
                           (get_local $l12)))
                       (i64.store offset=808
                         (get_local $l12)
-                        (get_local $l44))
+                        (get_local $l45))
                       (i64.store offset=800
                         (get_local $l12)
                         (get_local $l46))
@@ -3712,7 +3712,7 @@
                         (get_local $l48))
                       (i64.store offset=840
                         (get_local $l12)
-                        (get_local $l44))
+                        (get_local $l45))
                       (i64.store offset=832
                         (get_local $l12)
                         (get_local $l46))
@@ -3738,12 +3738,12 @@
                       (set_local $l46
                         (i64.load offset=800
                           (get_local $l12)))
-                      (set_local $l44
+                      (set_local $l45
                         (i64.load offset=808
                           (get_local $l12)))
                       (i64.store offset=808
                         (get_local $l12)
-                        (get_local $l44))
+                        (get_local $l45))
                       (i64.store offset=800
                         (get_local $l12)
                         (get_local $l46))
@@ -3755,7 +3755,7 @@
                         (get_local $l48))
                       (i64.store offset=840
                         (get_local $l12)
-                        (get_local $l44))
+                        (get_local $l45))
                       (i64.store offset=832
                         (get_local $l12)
                         (get_local $l46))
@@ -3781,7 +3781,7 @@
                       (set_local $l46
                         (i64.load offset=800
                           (get_local $l12)))
-                      (set_local $l44
+                      (set_local $l45
                         (i64.load offset=808
                           (get_local $l12)))
                       (i64.store offset=808
@@ -3830,7 +3830,7 @@
                           (get_local $l12)))
                       (i64.store offset=744
                         (get_local $l12)
-                        (get_local $l45))
+                        (get_local $l44))
                       (i64.store offset=736
                         (get_local $l12)
                         (get_local $l43))
@@ -3914,7 +3914,7 @@
                           (get_local $l12)))
                       (i64.store offset=840
                         (get_local $l12)
-                        (get_local $l44))
+                        (get_local $l45))
                       (i64.store offset=832
                         (get_local $l12)
                         (get_local $l46))
@@ -3941,7 +3941,7 @@
                       (set_local $l46
                         (i64.load offset=808
                           (get_local $l12)))
-                      (set_local $l44
+                      (set_local $l45
                         (i64.load offset=800
                           (get_local $l12)))
                       (i64.store offset=808
@@ -3981,7 +3981,7 @@
                       (set_local $l43
                         (i64.load offset=816
                           (get_local $l12)))
-                      (set_local $l45
+                      (set_local $l44
                         (i64.load offset=808
                           (get_local $l12)))
                       (set_local $l41
@@ -4228,12 +4228,12 @@
                     (set_local $l46
                       (i64.load offset=800
                         (get_local $l12)))
-                    (set_local $l44
+                    (set_local $l45
                       (i64.load offset=808
                         (get_local $l12)))
                     (i64.store offset=808
                       (get_local $l12)
-                      (get_local $l44))
+                      (get_local $l45))
                     (i64.store offset=800
                       (get_local $l12)
                       (get_local $l46))
@@ -4245,7 +4245,7 @@
                       (get_local $l48))
                     (i64.store offset=840
                       (get_local $l12)
-                      (get_local $l44))
+                      (get_local $l45))
                     (i64.store offset=832
                       (get_local $l12)
                       (get_local $l46))
@@ -4359,7 +4359,7 @@
                     (set_local $l46
                       (i64.load offset=800
                         (get_local $l12)))
-                    (set_local $l44
+                    (set_local $l45
                       (i64.load offset=808
                         (get_local $l12)))
                     (i64.store
@@ -4460,7 +4460,7 @@
                         (get_local $l12)))
                     (i64.store offset=808
                       (get_local $l12)
-                      (get_local $l44))
+                      (get_local $l45))
                     (i64.store offset=800
                       (get_local $l12)
                       (get_local $l46))
@@ -4472,7 +4472,7 @@
                       (get_local $l48))
                     (i64.store offset=840
                       (get_local $l12)
-                      (get_local $l44))
+                      (get_local $l45))
                     (i64.store offset=832
                       (get_local $l12)
                       (get_local $l46))
@@ -4611,7 +4611,7 @@
                         (get_local $l12)))
                     (i64.store offset=744
                       (get_local $l12)
-                      (get_local $l44))
+                      (get_local $l45))
                     (i64.store offset=736
                       (get_local $l12)
                       (get_local $l46))
@@ -4757,7 +4757,7 @@
                     (set_local $l46
                       (i64.load offset=712
                         (get_local $l12)))
-                    (set_local $l44
+                    (set_local $l45
                       (i64.load offset=704
                         (get_local $l12)))
                     (i64.store offset=808
@@ -4774,7 +4774,7 @@
                       (get_local $l24))
                     (i64.store offset=840
                       (get_local $l12)
-                      (get_local $l45))
+                      (get_local $l44))
                     (i64.store offset=832
                       (get_local $l12)
                       (get_local $l41))
@@ -4800,12 +4800,12 @@
                     (set_local $l43
                       (i64.load offset=800
                         (get_local $l12)))
-                    (set_local $l45
+                    (set_local $l44
                       (i64.load offset=808
                         (get_local $l12)))
                     (i64.store offset=808
                       (get_local $l12)
-                      (get_local $l45))
+                      (get_local $l44))
                     (i64.store offset=800
                       (get_local $l12)
                       (get_local $l43))
@@ -4817,7 +4817,7 @@
                       (get_local $l41))
                     (i64.store offset=840
                       (get_local $l12)
-                      (get_local $l45))
+                      (get_local $l44))
                     (i64.store offset=832
                       (get_local $l12)
                       (get_local $l43))
@@ -4949,23 +4949,23 @@
                     (set_local $l43
                       (i64.load offset=784
                         (get_local $l12)))
-                    (set_local $l45
+                    (set_local $l44
                       (i64.load offset=776
                         (get_local $l12)))
                     (set_local $l41
                       (i64.load offset=768
                         (get_local $l12)))
                     (br $B6))
-                  (set_local $l44
-                    (get_local $l17))
                   (set_local $l42
                     (get_local $l24))
                   (set_local $l43
                     (get_local $l23))
-                  (set_local $l45
+                  (set_local $l44
                     (get_local $l22))
                   (set_local $l41
                     (get_local $l21))
+                  (set_local $l45
+                    (get_local $l17))
                   (set_local $l46
                     (get_local $l18))
                   (set_local $l47
@@ -4999,7 +4999,7 @@
                   (i32.add
                     (get_local $l12)
                     (i32.const 552))
-                  (get_local $l45))
+                  (get_local $l44))
                 (i64.store
                   (i32.add
                     (get_local $l12)
@@ -5024,7 +5024,7 @@
                   (get_local $l52))
                 (i64.store offset=512
                   (get_local $l12)
-                  (get_local $l44))
+                  (get_local $l45))
                 (i64.store offset=544
                   (get_local $l12)
                   (get_local $l41))
@@ -5038,7 +5038,7 @@
                               (i64.or
                                 (i64.or
                                   (get_local $l41)
-                                  (get_local $l45))
+                                  (get_local $l44))
                                 (get_local $l43))
                               (get_local $l42))))
                         (i64.store offset=840
@@ -5401,14 +5401,14 @@
                                   (get_local $l12)
                                   (i32.const 672))
                                 (i32.const 16)))
-                            (set_local $l45
+                            (set_local $l44
                               (i64.load
                                 (get_local $l11)))
                             (i64.store
                               (get_local $l11)
                               (i64.or
                                 (i64.shr_u
-                                  (get_local $l45)
+                                  (get_local $l44)
                                   (i64.const 1))
                                 (i64.shl
                                   (get_local $l43)
@@ -5429,7 +5429,7 @@
                                   (get_local $l43)
                                   (i64.const 1))
                                 (i64.shl
-                                  (get_local $l45)
+                                  (get_local $l44)
                                   (i64.const 63))))
                             (set_local $l41
                               (i64.or
@@ -5469,14 +5469,14 @@
                                       (get_local $l12)
                                       (i32.const 736))
                                     (i32.const 16)))
-                                (set_local $l45
+                                (set_local $l44
                                   (i64.load
                                     (get_local $l11)))
                                 (i64.store
                                   (get_local $l11)
                                   (i64.or
                                     (i64.shr_u
-                                      (get_local $l45)
+                                      (get_local $l44)
                                       (i64.const 1))
                                     (i64.shl
                                       (get_local $l43)
@@ -5497,7 +5497,7 @@
                                       (get_local $l43)
                                       (i64.const 1))
                                     (i64.shl
-                                      (get_local $l45)
+                                      (get_local $l44)
                                       (i64.const 63))))
                                 (set_local $l42
                                   (i64.or
@@ -5676,14 +5676,14 @@
                                   (get_local $l12)
                                   (i32.const 704))
                                 (i32.const 16)))
-                            (set_local $l45
+                            (set_local $l44
                               (i64.load
                                 (get_local $l11)))
                             (i64.store
                               (get_local $l11)
                               (i64.or
                                 (i64.shr_u
-                                  (get_local $l45)
+                                  (get_local $l44)
                                   (i64.const 1))
                                 (i64.shl
                                   (get_local $l43)
@@ -5704,7 +5704,7 @@
                                   (get_local $l43)
                                   (i64.const 1))
                                 (i64.shl
-                                  (get_local $l45)
+                                  (get_local $l44)
                                   (i64.const 63))))
                             (set_local $l41
                               (i64.or
@@ -5744,14 +5744,14 @@
                                       (get_local $l12)
                                       (i32.const 768))
                                     (i32.const 16)))
-                                (set_local $l45
+                                (set_local $l44
                                   (i64.load
                                     (get_local $l11)))
                                 (i64.store
                                   (get_local $l11)
                                   (i64.or
                                     (i64.shr_u
-                                      (get_local $l45)
+                                      (get_local $l44)
                                       (i64.const 1))
                                     (i64.shl
                                       (get_local $l43)
@@ -5772,7 +5772,7 @@
                                       (get_local $l43)
                                       (i64.const 1))
                                     (i64.shl
-                                      (get_local $l45)
+                                      (get_local $l44)
                                       (i64.const 63))))
                                 (set_local $l42
                                   (i64.or
@@ -6111,7 +6111,7 @@
                             (i32.add
                               (get_local $l12)
                               (i32.const 744))))
-                        (set_local $l45
+                        (set_local $l44
                           (i64.load offset=736
                             (get_local $l12)))
                         (br $B42))
@@ -6130,7 +6130,7 @@
                           (i32.add
                             (get_local $l12)
                             (i32.const 776))))
-                      (set_local $l45
+                      (set_local $l44
                         (i64.load offset=768
                           (get_local $l12))))
                     (set_local $l11
@@ -6162,7 +6162,7 @@
                       (get_local $l41))
                     (i64.store offset=640
                       (get_local $l12)
-                      (get_local $l45))
+                      (get_local $l44))
                     (call $f8
                       (i32.add
                         (get_local $l12)
@@ -6178,7 +6178,7 @@
                     (set_local $l43
                       (i64.load
                         (get_local $l11)))
-                    (set_local $l45
+                    (set_local $l44
                       (i64.load offset=640
                         (get_local $l12)))
                     (i64.store offset=808
@@ -6186,7 +6186,7 @@
                       (get_local $l43))
                     (i64.store offset=800
                       (get_local $l12)
-                      (get_local $l45))
+                      (get_local $l44))
                     (i64.store offset=816
                       (get_local $l12)
                       (get_local $l42))
@@ -6198,7 +6198,7 @@
                       (get_local $l43))
                     (i64.store offset=832
                       (get_local $l12)
-                      (get_local $l45))
+                      (get_local $l44))
                     (i64.store offset=848
                       (get_local $l12)
                       (get_local $l42))
@@ -6360,7 +6360,7 @@
                       (get_local $l43))
                     (i64.store offset=832
                       (get_local $l12)
-                      (get_local $l45))
+                      (get_local $l44))
                     (i64.store offset=848
                       (get_local $l12)
                       (get_local $l42))
@@ -6408,7 +6408,7 @@
                     (set_local $l46
                       (i64.load
                         (get_local $l9)))
-                    (set_local $l44
+                    (set_local $l45
                       (i64.load offset=736
                         (get_local $l12))))
                   (i64.store offset=488
@@ -6442,7 +6442,7 @@
                     (get_local $l46))
                   (i64.store offset=480
                     (get_local $l12)
-                    (get_local $l44))
+                    (get_local $l45))
                   (i64.store offset=496
                     (get_local $l12)
                     (get_local $l47))
@@ -6535,7 +6535,7 @@
                     (i32.add
                       (get_local $l8)
                       (i32.const 8))))
-                (call $env.eeiReturn
+                (call $env.ethereum_return
                   (get_local $l11)
                   (get_local $l9))
                 (call $f158

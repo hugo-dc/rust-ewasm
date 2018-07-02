@@ -112,25 +112,16 @@ pub fn main() {
             let vec_buf = ecadd_output_buf.to_vec();
             //let raw_vec_buf = &vec_buf as *const u32;
 
+            /*
             unsafe {
                 // TODO: result is backwards (endianness)
                 eeiReturn(vec_buf.as_ptr() as *const u32, output_length as u32);
             }
-
-
-            /*
-            unsafe{
-                for i in (0..64) {
-                    print32(vec_buf[i] as u32);
-                }
-            }
             */
 
 
-            // rust api specific:
-            //=================================
-            //ewasm_api::finish_data(vec_buf);
-            //---------------------------------
+            ewasm_api::finish_data(vec_buf);
+
             return;
         },
         Err(_) => { return; }
