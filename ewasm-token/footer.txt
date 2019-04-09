@@ -141,108 +141,6 @@
             (call $printMemHex (get_local $ptrReturnData1) (i32.const 32))
             ;; store it
             (call $storageStore (get_local $ptrStorageKey2) (get_local $ptrReturnData1))
-
-            ;; second command: Transfer 500000 to 0xe929CF2544363bdCEE4a976515d5F97758Ef476c
-            ;; and save result
-            (i32.store
-              (get_local $ptrCallResult2)
-              (call $call
-                ;; gas
-                (i64.const 100000)
-                ;; address offset
-                (get_local $ptrAddress)
-                ;; value offset
-                (get_local $ptrValueZero)
-                ;; data offset
-                (get_local $ptrCommand2)
-                ;; data length
-                (get_local $lenCommand2)
-              )
-            )
-
-            ;; store it
-            (call $storageStore (get_local $ptrStorageKey3) (get_local $ptrCallResult2))
-
-            ;; read return val
-            (call $returnDataCopy
-              ;; resultOffset
-              (get_local $ptrReturnData2)
-              ;; dataOffset
-              (i32.const 0)
-              ;; length
-              (call $getReturnDataSize)
-            )
-
-            ;; store it
-            (call $storageStore (get_local $ptrStorageKey4) (get_local $ptrReturnData2))
-
-            ;; third command: Query balance of 0xdeadbeef00000000000000000000000000000000
-            ;; and save result
-            (i32.store
-              (get_local $ptrCallResult3)
-              (call $call
-                ;; gas
-                (i64.const 100000)
-                ;; address offset
-                (get_local $ptrAddress)
-                ;; value offset
-                (get_local $ptrValueZero)
-                ;; data offset
-                (get_local $ptrCommand3)
-                ;; data length
-                (get_local $lenCommand3)
-              )
-            )
-
-            ;; store it
-            (call $storageStore (get_local $ptrStorageKey5) (get_local $ptrCallResult3))
-
-            ;; read return val
-            (call $returnDataCopy
-              ;; resultOffset
-              (get_local $ptrReturnData3)
-              ;; dataOffset
-              (i32.const 0)
-              ;; length
-              (call $getReturnDataSize)
-            )
-
-            ;; store it
-            (call $storageStore (get_local $ptrStorageKey6) (get_local $ptrReturnData3))
-
-            ;; fourth command: Query balance of 0xe929CF2544363bdCEE4a976515d5F97758Ef476c
-            ;; and save result
-            (i32.store
-              (get_local $ptrCallResult4)
-              (call $call
-                ;; gas
-                (i64.const 100000)
-                ;; address offset
-                (get_local $ptrAddress)
-                ;; value offset
-                (get_local $ptrValueZero)
-                ;; data offset
-                (get_local $ptrCommand4)
-                ;; data length
-                (get_local $lenCommand4)
-              )
-            )
-
-            ;; store it
-            (call $storageStore (get_local $ptrStorageKey7) (get_local $ptrCallResult4))
-
-            ;; read return val
-            (call $returnDataCopy
-              ;; resultOffset
-              (get_local $ptrReturnData4)
-              ;; dataOffset
-              (i32.const 0)
-              ;; length
-              (call $getReturnDataSize)
-            )
-
-            ;; store it
-            (call $storageStore (get_local $ptrStorageKey8) (get_local $ptrReturnData4))
           )
         )
   expect:
@@ -254,32 +152,32 @@
         - ALL
       result:
         a94f5374fce5edbc8e2a8697c15331677e6ebf0b:
-          balance: '99999821156'
+          balance: '99999968084'
         deadbeef00000000000000000000000000000000:
           storage: {
             # First call should be success
             # $memPointerStorageKey1 = 1
-            1: 0,
+            #1: 0,
             # first return data: expect to get balance 1000000 that we set above in pre
-            2: 1000000,
+            #2: 1000000,
             # Second call should be success
-            3: 0,
+            #3: 0,
             # No output expected from second call
-            4: '',
+            #4: '',
             # Third call should be success
-            5: 0,
+            #5: 0,
             # Third call should return new balance
             #6: 500000,
             # Fourth call should be success
-            7: 0,
+            #7: 0,
             # Fourth call should return new balance
             #8: 500000,
           }
         a000000000000000000000000000000000000000:
           storage: {
             # Token balances
-            0xdeadbeef00000000000000000000000000000000: 500000,
-            0xe929cf2544363bdcee4a976515d5f97758ef476c: 500000
+            0xdeadbeef00000000000000000000000000000000: 1000000,
+            #0xe929cf2544363bdcee4a976515d5f97758ef476c: 500000
           }
   transaction:
     data:
