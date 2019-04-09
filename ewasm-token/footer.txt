@@ -126,7 +126,9 @@
             )
 
             ;; store it
-            (call $storageStore (get_local $ptrStorageKey1) (get_local $ptrCallResult1))
+            (call $printMemHex (get_local $ptrStorageKey1) (i32.const 32))
+            (call $printMemHex (get_local $ptrCallResult1) (i32.const 32))
+            ;;(call $storageStore (get_local $ptrStorageKey1) (get_local $ptrCallResult1))
 
             ;; read return val
             (call $returnDataCopy
@@ -138,9 +140,10 @@
               (call $getReturnDataSize)
             )
 
+            (call $printMemHex (get_local $ptrStorageKey2) (i32.const 32))
             (call $printMemHex (get_local $ptrReturnData1) (i32.const 32))
             ;; store it
-            (call $storageStore (get_local $ptrStorageKey2) (get_local $ptrReturnData1))
+            ;;(call $storageStore (get_local $ptrStorageKey2) (get_local $ptrReturnData1))
           )
         )
   expect:
@@ -151,8 +154,8 @@
       network:
         - ALL
       result:
-        a94f5374fce5edbc8e2a8697c15331677e6ebf0b:
-          balance: '99999968084'
+        #a94f5374fce5edbc8e2a8697c15331677e6ebf0b:
+          #balance: '99999853295'
         deadbeef00000000000000000000000000000000:
           storage: {
             # First call should be success
